@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>English Checkpoint Practice – Stage 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Kalam:wght@700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF2F8; --card:#FFFFFF; --ink:#1C2B4A; --soft:#56627A; --line:#CBD5E4; --rule:#DDE5F1;
+  --pen:#C2303C; --blue:#2447A8; --on-blue:#FFFFFF; --hl:#FFE45C; --hl-ink:#1C2440;
+  --ok:#1D8556; --ok-bg:#E2F3EA; --warn:#9A6200; --warn-bg:#FFF2D6; --bad-bg:#FBE5E7;
+  color-scheme: light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#111A28; --card:#18243A; --ink:#E4EAF6; --soft:#A2AEC4; --line:#31415D; --rule:#25344D;
+  --pen:#FF8790; --blue:#8FB0FF; --on-blue:#0E1626; --hl:#5C5221; --hl-ink:#FFF4C4;
+  --ok:#5CD89C; --ok-bg:#163527; --warn:#F2C35B; --warn-bg:#3A2E12; --bad-bg:#3A1E25; color-scheme: dark; } }
+:root[data-theme="dark"]{
+  --bg:#111A28; --card:#18243A; --ink:#E4EAF6; --soft:#A2AEC4; --line:#31415D; --rule:#25344D;
+  --pen:#FF8790; --blue:#8FB0FF; --on-blue:#0E1626; --hl:#5C5221; --hl-ink:#FFF4C4;
+  --ok:#5CD89C; --ok-bg:#163527; --warn:#F2C35B; --warn-bg:#3A2E12; --bad-bg:#3A1E25; color-scheme: dark; }
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 120px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.5;-webkit-text-size-adjust:100%}
+main{max-width:640px;margin:0 auto;padding:14px 14px 60px}
+h1,h2,h3,.hand{font-family:"Kalam","Chalkboard SE","Comic Sans MS",cursive;color:var(--pen);font-weight:700;line-height:1.15}
+h1{font-size:2.1rem;margin:10px 0 4px} h2{font-size:1.45rem;margin:0 0 8px} h3{font-size:1.2rem;margin:0 0 6px}
+p{margin:0 0 10px} .muted{color:var(--soft)}
+button,input,textarea,select{font:inherit;color:inherit}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:16px;margin-top:12px}
+.btn{appearance:none;border:none;border-radius:10px;padding:13px 18px;min-height:50px;background:var(--blue);color:var(--on-blue);font-weight:700;cursor:pointer;font-size:1rem}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.btn.small{min-height:40px;padding:8px 12px;font-size:.92rem}
+.btn:disabled{opacity:.45}
+:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.field,textarea{width:100%;padding:12px;border-radius:10px;border:2px solid var(--line);background:var(--card)}
+textarea{resize:vertical;line-height:30px;padding:2px 12px 8px;
+  background-image:linear-gradient(transparent 29px,var(--rule) 29px,var(--rule) 30px);background-size:100% 30px;background-attachment:local}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>.btn{flex:1}
+.serif{font-family:"Source Serif 4",Georgia,"Times New Roman",serif}
+.hidden{display:none!important}
+.sheet-wrap{position:fixed;inset:0;background:rgba(8,12,24,.55);display:flex;align-items:flex-end;justify-content:center;z-index:30;padding:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+.sheet-wrap .card{width:100%;max-width:640px;max-height:82vh;overflow:auto;margin:0}
+.lines{font-family:"Source Serif 4",Georgia,serif;font-size:1.02rem;line-height:1.55}
+.ln{display:grid;grid-template-columns:2.2em 1fr;gap:6px;min-height:1.55em}
+.ln .no{color:var(--soft);font-family:"Atkinson Hyperlegible",sans-serif;font-size:.78rem;text-align:right;padding-top:.25em}
+.ln.head .tx{font-weight:700}
+.ln.mark{background:var(--hl);color:var(--hl-ink);border-radius:4px}
+.ln.mark .no{color:var(--hl-ink)}
+.sep{text-align:center;letter-spacing:.4em;color:var(--soft)}
+.gloss{font-size:.9rem;color:var(--soft);border-top:1.5px dashed var(--line);margin-top:12px;padding-top:8px}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);padding:10px 0 8px;margin:-14px -14px 0;padding-left:14px;padding-right:14px;border-bottom:1.5px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:11;background:var(--bg)}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.ptitle{font-family:"Kalam",cursive;color:var(--pen);font-weight:700;font-size:1.15rem}
+.timer{font-variant-numeric:tabular-nums;font-weight:700;font-size:.95rem;color:var(--soft)}
+.timer.late{color:var(--pen)}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
+.tab{min-height:44px;border-radius:10px;border:2px solid var(--line);background:var(--card);font-weight:700;cursor:pointer}
+.tab.on{background:var(--blue);color:var(--on-blue);border-color:var(--blue)}
+.secintro{font-weight:700;margin:18px 0 0}
+.q{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:14px;margin-top:10px}
+.qhead{display:flex;gap:10px;align-items:baseline}
+.qn{font-family:"Kalam",cursive;color:var(--pen);font-weight:700;font-size:1.3rem;min-width:1.6em}
+.pre{color:var(--soft);margin:0 0 4px}
+.marks{text-align:right;font-size:.85rem;color:var(--soft);margin-top:6px}
+.refbtn{background:none;border:none;color:var(--blue);text-decoration:underline;padding:4px 0;cursor:pointer;font-size:.92rem}
+.opts{display:grid;gap:8px;margin-top:6px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:12px;border:2px solid var(--line);border-radius:12px;cursor:pointer;background:var(--card)}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt .box{flex:0 0 22px;height:22px;border:2px solid var(--soft);border-radius:5px;margin-top:2px;display:grid;place-items:center;font-weight:700;font-size:15px;line-height:1}
+.opt.on{background:var(--hl);color:var(--hl-ink);border-color:var(--ink)}
+.opt.on .box{border-color:var(--hl-ink)}
+.opt.on .box::after{content:"✓"}
+.flabel{display:block;font-weight:700;margin:10px 0 4px;font-size:.95rem}
+.task{white-space:pre-line}
+.wc{font-size:.9rem;color:var(--soft);text-align:right;margin-top:4px}
+.tips li{margin-bottom:4px}
+.paperbtn{display:block;width:100%;text-align:left;padding:14px;border-radius:12px;border:2px solid var(--line);background:var(--card);cursor:pointer;margin-top:8px}
+.paperbtn b{font-family:"Kalam",cursive;color:var(--pen);font-size:1.25rem;display:block}
+.status{font-size:.85rem;font-weight:700}
+.status.done{color:var(--ok)}
+</style></head>
+<body><main id="app"></main>
+<script>
+const DATA = {"papers": [{"id": 1, "title": "Paper 1 – Non-fiction", "short": "Non-fiction", "texts": [{"key": "A", "name": "Text A", "intro": "", "lines": ["Stargazing* nights for families", "", "Dark skies, dazzling stars and a deep, quiet calm:", "stargazing is simply the most magical way to spend a", "night! Our observatory, which sits high in the hills, is", "the perfect place to begin. But with so many choices, how", "do you pick the right night for your family? Read on.", "", "When should we come?", "The sky is darkest around the new moon, when even faint", "stars can be seen. If you would rather look at the Moon", "itself, choose a night close to the full moon – its craters", "look amazing through a telescope*. Clear nights are best,", "so always check the weather before you travel.", "", "How long should we stay?", "Our short session lasts one hour and is ideal for younger", "children. If your family is keen to get stuck in, book the", "all-night ‘Sky Marathon’ instead. Hopping from telescope to", "telescope until sunrise is thrilling but tiring!", "", "What should we bring?", "Warm clothes are essential: nights in the hills can be", "freezing. You might also want to bring a blanket and a flask", "of hot chocolate. However, please leave bright torches at", "home, because they make it harder for everyone’s eyes to", "get used to the dark.", "", "Who will help us?", "Our friendly guides know the night sky like the back of", "their hand. Don’t be shy – ask them anything!"], "heads": [1, 9, 16, 22, 29], "glossary": ["*stargazing: looking at the stars and planets at night", "*telescope: an instrument that makes faraway objects look bigger and closer"]}, {"key": "B", "name": "Text B", "intro": "", "lines": ["Caroline Herschel: the comet hunter", "", "Most people have heard of famous astronomers*, but fewer", "know about Caroline Herschel – a singer who became one of", "the greatest comet hunters in history!", "", "Caroline was born in Germany in 1750. As a girl, she was", "expected to cook and clean rather than study. Despite this,", "she astonishingly went on to discover eight comets*.", "", "In 1772, Caroline moved to England to live with her brother", "William, a music teacher. At first, she trained as a singer.", "Soon, however, William became obsessed with the night sky.", "He taught Caroline mathematics, and together they built", "their own telescopes in the house.", "", "In 1781, a new planet – Uranus – was discovered by William.", "The King was so impressed that he paid William to work as an", "astronomer. Six years later, Caroline was given a salary of", "her own: she was the first woman ever to be paid as a scientist!", "", "Today, a comet and a crater on the Moon are named after her.", "She lived until she was ninety-seven, and she never stopped", "loving the stars."], "heads": [1], "glossary": ["*astronomer: a scientist who studies stars and planets", "*comet: a ball of ice and dust that travels around the Sun"]}], "sections": [{"intro": "Read Text A, in the insert, and answer Questions 1–7.", "qs": [{"id": "1a", "n": "1", "pre": "Look at lines 3–7.", "ref": ["A", 3, 7], "p": "(a) Look at line 3: ‘Dark skies, dazzling stars and a deep, quiet calm’. Name the figurative language technique the writer uses here.", "type": "text", "m": 1}, {"id": "1b", "ref": ["A", 3, 7], "p": "(b) Give one opinion from this section.", "type": "text", "m": 1}, {"id": "1c", "ref": ["A", 3, 7], "p": "(c) Give one example of a relative pronoun.", "type": "text", "m": 1}, {"id": "2", "n": "2", "pre": "Look at lines 16–20.", "ref": ["A", 16, 20], "p": "Find a short phrase which means to start doing something with a lot of energy.", "type": "text", "m": 1}, {"id": "3a", "n": "3", "pre": "Look at lines 9–14.", "ref": ["A", 9, 14], "p": "(a) What punctuation mark could replace the dash ( – ) in line 12?", "type": "text", "m": 1}, {"id": "3b", "ref": ["A", 16, 20], "p": "(b) Look at lines 19–20. Explain the meaning of the phrase ‘Hopping from telescope to telescope’.", "type": "text", "m": 2}, {"id": "4", "n": "4", "p": "You are booking a stargazing night. Would you prefer the short session or the ‘Sky Marathon’? Tick one box. Explain your choice giving evidence from the text.", "type": "choice", "o": ["I would prefer the short session", "I would prefer the Sky Marathon"], "f": ["Reason for your choice:", "Evidence from the text:"], "m": 2}, {"id": "5a", "n": "5", "pre": "Look at lines 22–27.", "ref": ["A", 22, 27], "p": "(a) ‘On the other hand’ is often used to introduce an opposite idea. Which word is used in the same way in this section?", "type": "text", "m": 1}, {"id": "5b", "ref": ["A", 22, 27], "p": "(b) Look at line 24. Why has the modal verb ‘might’ been used here?", "type": "text", "m": 1}, {"id": "6", "n": "6", "p": "The text is structured in different ways to make the information easy to read. Give two of the ways.", "type": "two", "f": ["•", "•"], "m": 2}, {"id": "7", "n": "7", "p": "Where do you think you would find a text like this? Tick one box.", "type": "mc", "o": ["A school science textbook", "A leaflet from an observatory", "A dictionary", "A newspaper report"], "m": 1}]}, {"intro": "Read Text B, in the insert, and answer Questions 8–13.", "qs": [{"id": "8a", "n": "8", "pre": "Look at lines 7–9.", "ref": ["B", 7, 9], "p": "(a) Find an adverb which shows that the writer is surprised by what Caroline did.", "type": "text", "m": 1}, {"id": "8b", "ref": ["B", 7, 9], "p": "(b) Which word in line 8 shows that Caroline succeeded even though things were difficult for her?", "type": "text", "m": 1}, {"id": "9a", "n": "9", "pre": "Look at lines 17–20.", "ref": ["B", 17, 20], "p": "(a) What is the purpose of the dashes ( – ) in line 17? Tick one box.", "type": "mc", "o": ["to add a detail", "to add a meaning", "to add a comment", "to add an explanation"], "m": 1}, {"id": "9b", "ref": ["B", 17, 20], "p": "(b) Give one example of a passive verb form from this section.", "type": "text", "m": 1}, {"id": "9c", "ref": ["B", 17, 20], "p": "(c) Why has a colon ( : ) been used in line 20?", "type": "text", "m": 1}, {"id": "10", "n": "10", "pre": "Look at line 22.", "ref": ["B", 22, 24], "p": "The text is mainly in the past tense. Why is the present tense used in line 22?", "type": "text", "m": 1}, {"id": "11a", "n": "11", "p": "(a) The writer uses adverbial phrases to help structure the text. Give one example of a three-word adverbial phrase of place.", "type": "text", "m": 1}, {"id": "11b", "p": "(b) Give one example of an adverbial phrase of time which introduces a new paragraph.", "type": "text", "m": 1}, {"id": "12", "n": "12", "p": "Text B is a biographical text. Give one feature of a biography used in Text B.", "type": "text", "m": 1}, {"id": "13", "n": "13", "p": "Which two themes occur throughout Text B? Tick two boxes.", "type": "multi", "o": ["the night sky", "cooking and cleaning", "working hard to succeed", "kings and queens", "singing lessons"], "m": 2}]}], "writing": {"n": "14", "task": "Your school is starting a new after-school club, but not many students have joined yet. Write a persuasive text for the school website to make more students want to join.", "list": ["an astronomy club", "a robotics club", "a football club", "a drama club", "a cooking club", "a club of your choice"], "listIntro": "The club could be:", "after": "Remember to use the features of persuasive writing.", "kind": "persuasive"}}, {"id": 2, "title": "Paper 2 – Fiction", "short": "Fiction", "texts": [{"key": "T", "name": "Text", "intro": "Text for Section A. Isla and her father have travelled to a small island. Gran looks after the lighthouse there, and she needs their help.", "lines": ["Isla pressed her forehead against the cold glass and stared", "at the grey sea, the way a sailor stares at a storm he means", "to beat. The little ferry* groaned and rolled beneath her feet.", "Her father had gone below an hour ago, his face as green as", "the waves, and all the other passengers had done the same.", "", "But Isla did not want to miss a single thing.", "", "She crept out of the cabin and onto the slippery deck, her", "scarf whipping around her face. Then, through the drizzle,", "the island appeared. On its highest cliff stood the", "lighthouse, tall and white and proud, watching over the", "water like an old soldier who refused to sleep.", "******", "By the time they had climbed the cliff path, the sun was", "sinking. A horse and cart had carried their trunk* as far as", "the gate; after that, Father carried it himself, puffing.", "Gran was waiting in the doorway. She was holding Father’s", "letter so close to her face that it almost touched her nose.", "‘It looks … smaller than I remembered,’ Isla whispered.", "‘Everything looks smaller when you grow,’ said Gran, and she", "laughed – a little too loudly. ‘Now, come inside before the", "wind steals you away!’", "As they stepped into the kitchen, Gran missed the last step", "and grabbed the door frame.", "‘Silly old step,’ she muttered. ‘It moves every winter.’", "******", "That night, Isla could not sleep. The oil lamp beside her", "bed flickered, throwing jumpy shadows onto the ceiling.", "Through her window, she could see the lighthouse – and its", "lamp was dark.", "She pulled on her boots and tiptoed down the stairs. In the", "kitchen, Father and Gran were talking in low voices.", "‘You can’t keep climbing those steps every night, Mother,’", "Father was saying. ‘Not when you can’t even read my letters.’", "‘And who else will do it?’ said Gran. ‘The ships need that", "light.’", "Isla slipped out of the back door. The wind tugged at her", "coat, but she did not stop until she reached the bottom of", "the lighthouse. One hundred and twelve steps spiralled up", "into the darkness above her.", "She took a deep breath, gripped the cold iron rail and began", "to climb."], "heads": [], "glossary": ["*ferry: a boat that carries people across a short stretch of water", "*trunk: a large, strong box for carrying clothes on a long journey"]}], "sections": [{"intro": "Read the Text in the insert, and answer Questions 1–17.", "qs": [{"id": "1", "n": "1", "pre": "Look at the first section (lines 1–13).", "ref": ["T", 1, 5], "p": "Where is Isla?", "type": "text", "m": 1}, {"id": "2", "n": "2", "ref": ["T", 1, 3], "p": "Look at the first sentence. How does Isla feel about the journey? Tick one box.", "type": "mc", "o": ["frightened", "bored", "determined", "sad"], "m": 1}, {"id": "3", "n": "3", "ref": ["T", 1, 5], "p": "Why are the other passengers not looking at the sea?", "type": "text", "m": 1}, {"id": "4", "n": "4", "pre": "Look at line 7.", "ref": ["T", 6, 8], "p": "How does the structure of this sentence grab the reader’s attention? Give two ways.", "type": "two", "f": ["•", "•"], "m": 2}, {"id": "5a", "n": "5", "pre": "Look at lines 9–13.", "ref": ["T", 9, 13], "p": "(a) Give a short phrase which means ‘moved quietly so that nobody would notice’.", "type": "text", "m": 1}, {"id": "5b", "ref": ["T", 9, 13], "p": "(b) Give one example of personification from this section.", "type": "text", "m": 1}, {"id": "6", "n": "6", "pre": "Look at the second section (lines 15–26).", "p": "Why is a new section started here? Tick two boxes. To show a change of…", "type": "multi", "o": ["topic", "setting", "viewpoint", "character", "time"], "m": 2}, {"id": "7", "n": "7", "p": "Do you think Father cares about Gran? Tick one box. Give evidence from the text to support your answer.", "type": "choice", "o": ["Yes", "No"], "f": ["Evidence:"], "m": 1}, {"id": "8", "n": "8", "ref": ["T", 15, 16], "p": "Look at the first sentence in line 15. Give the main clause.", "type": "text", "m": 1}, {"id": "9a", "n": "9", "pre": "Look at line 20.", "ref": ["T", 20, 20], "p": "(a) Why is an ellipsis ( … ) used?", "type": "text", "m": 1}, {"id": "9b", "ref": ["T", 20, 20], "p": "(b) What does this tell us about how Isla is feeling?", "type": "text", "m": 1}, {"id": "10", "n": "10", "pre": "Look at lines 21–22.", "ref": ["T", 21, 23], "p": "What does ‘she laughed – a little too loudly’ tell us about how Gran was feeling?", "type": "text", "m": 1}, {"id": "11", "n": "11", "pre": "Look at lines 28–31.", "ref": ["T", 28, 31], "p": "Give two words or phrases that make this part of the story feel tense or spooky.", "type": "two", "f": ["Evidence 1:", "Evidence 2:"], "m": 2}, {"id": "12", "n": "12", "pre": "Look at lines 34–35.", "ref": ["T", 34, 35], "p": "What does Father mean? Tick one box.", "type": "mc", "o": ["‘It is not safe for you to do this job any more.’", "‘You should climb the steps faster.’", "‘You should buy a new lamp.’", "‘You should write me more letters.’"], "m": 1}, {"id": "13", "n": "13", "pre": "Look at lines 38–43.", "ref": ["T", 38, 43], "p": "Why does Isla slip out of the back door? Tick one box.", "type": "mc", "o": ["She wants to go back home.", "She wants to light the lamp herself.", "She is angry with Gran.", "She wants to look at the sea."], "m": 1}, {"id": "14", "n": "14", "pre": "Look at lines 28–33.", "ref": ["T", 28, 33], "p": "This story is told from Isla’s viewpoint. Give one example of how the writer shows her viewpoint.", "type": "text", "m": 1}, {"id": "15", "n": "15", "p": "The writer gradually lets us know that Gran cannot see very well. Find evidence from the text to support this statement.", "type": "two", "f": ["One piece of evidence from the second section (lines 15–26):", "One piece of evidence from the third section (lines 28–43):"], "m": 2}, {"id": "16", "n": "16", "p": "Give two ways we know this story is set a long time ago.", "type": "two", "f": ["•", "•"], "m": 2}, {"id": "17", "n": "17", "p": "Do you think Isla is brave? Tick one box. Give one reason and one piece of evidence from the text to support your answer.", "type": "choice", "o": ["Yes", "No"], "f": ["Reason:", "Evidence:"], "m": 2}]}], "writing": {"n": "18", "task": "Write the opening of a story about a character who has to be brave to help someone they love.", "list": ["The main characters: Who is in the story? What is their relationship? Is anyone else involved?", "The setting: Where are they? How did they get there?", "The plot: What is the problem? How does the character have to be brave?", "Where will you choose to stop? Will you leave it on a cliff-hanger?"], "listIntro": "Think about:", "after": "", "kind": "narrative"}}]};
+const PARENT_FILE = "english-padre.html";
+const LIMIT = 60*60;
+const esc = s => String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const KEY = p => "eng6-student-p"+p;
+function load(p){ try{ return JSON.parse(localStorage.getItem(KEY(p))||"null"); }catch(e){ return null; } }
+function save(){ if(!S) return; try{ localStorage.setItem(KEY(S.paper), JSON.stringify(S)); }catch(e){} }
+let S=null, NAME="Martín", TAB="insert", timerId=null;
+const app=document.getElementById("app");
+const P = id => DATA.papers.find(p=>p.id===id);
+const allQs = paper => paper.sections.flatMap(s=>s.qs);
+
+function home(){
+  clearInterval(timerId); S=null;
+  app.innerHTML=`<h1>English practice</h1><p class="hand" style="font-size:1.2rem">Cambridge Checkpoint · Stage 6</p>
+  <div class="card"><p style="font-size:1.15rem;font-weight:700;margin-bottom:4px">Hi, ${esc(NAME)}!</p>
+  <p class="muted" style="margin:0">Choose a paper. Each one takes 1 hour and has 50 marks: Reading (25) and Writing (25).</p>
+  ${DATA.papers.map(p=>{const st=load(p.id);const s=st?(st.submitted?'<span class="status done">Sent ✓</span>':'<span class="status">In progress</span>'):'';
+    return `<button class="paperbtn" data-p="${p.id}"><b>${esc(p.title)}</b>${p.id===1?"Text A, Text B and a persuasive text":"A story extract and a story opening"} ${s}</button>`}).join("")}
+  </div>
+  <div class="card"><h3>Before you start</h3><ul class="tips">
+  <li>In the reading section, first read the questions, then the insert.</li>
+  <li>In fiction, read the whole text. Don’t try to understand every single word.</li>
+  <li>Manage your time: about 30 minutes for reading and 30 for writing. You can start with the writing if you like.</li>
+  <li>In writing, plan first, answer every bullet point in the task and divide your text into paragraphs.</li>
+  <li>Your answers are saved on this phone. At the end, you will send them to your dad.</li></ul></div>`;
+  app.querySelectorAll(".paperbtn").forEach(b=>b.onclick=()=>{
+    const id=+b.dataset.p; S=load(id);
+    if(S&&S.submitted){ done(); return; }
+    if(!S){ S={paper:id,name:NAME,start:Date.now(),ans:{},plan:"",w:"",submitted:false}; save(); }
+    S.name=NAME; TAB="insert"; test();
+  });
+}
+
+function linesHTML(t, from, to){
+  const out=[]; t.lines.forEach((l,i)=>{const n=i+1; if(from&&(n<from-1||n>to+1)) return;
+    if(l==="******"){out.push(`<div class="ln"><span class="no">${n}</span><span class="sep">* * *</span></div>`);return;}
+    const mark = from && n>=from && n<=to;
+    out.push(`<div class="ln ${t.heads.includes(n)?"head":""} ${mark?"mark":""}"><span class="no">${n}</span><span class="tx">${esc(l)||"&nbsp;"}</span></div>`);});
+  return out.join("");
+}
+function insertHTML(paper){
+  return paper.texts.map(t=>`<div class="card"><h2>${esc(t.name)}</h2>${t.intro?`<p class="serif" style="font-style:italic">${esc(t.intro)}</p>`:""}
+  <div class="lines">${linesHTML(t)}</div><div class="gloss"><b>Glossary</b><br>${t.glossary.map(esc).join("<br>")}</div></div>`).join("");
+}
+
+function inputHTML(q){
+  const a=S.ans[q.id];
+  if(q.type==="text") return `<textarea rows="2" data-q="${q.id}" aria-label="Answer to question ${q.id}">${esc(a||"")}</textarea>`;
+  if(q.type==="two") return q.f.map((f,i)=>`<label class="flabel" for="${q.id}_${i}">${esc(f)}</label><textarea rows="2" id="${q.id}_${i}" data-q="${q.id}" data-i="${i}">${esc((a||[])[i]||"")}</textarea>`).join("");
+  if(q.type==="mc"||q.type==="multi"){
+    const sel = q.type==="mc" ? [a] : (a||[]);
+    return `<div class="opts">${q.o.map(o=>`<label class="opt ${sel.includes(o)?"on":""}"><input type="${q.type==="mc"?"radio":"checkbox"}" name="${q.id}" data-q="${q.id}" data-v="${esc(o)}" ${sel.includes(o)?"checked":""}><span class="box"></span><span>${esc(o)}</span></label>`).join("")}</div>`;
+  }
+  if(q.type==="choice"){
+    const c=(a||{}).c, f=(a||{}).f||[];
+    return `<div class="opts">${q.o.map(o=>`<label class="opt ${c===o?"on":""}"><input type="radio" name="${q.id}" data-q="${q.id}" data-c="${esc(o)}" ${c===o?"checked":""}><span class="box"></span><span>${esc(o)}</span></label>`).join("")}</div>`+
+      q.f.map((fl,i)=>`<label class="flabel" for="${q.id}_f${i}">${esc(fl)}</label><textarea rows="2" id="${q.id}_f${i}" data-q="${q.id}" data-fi="${i}">${esc(f[i]||"")}</textarea>`).join("");
+  }
+}
+function readingHTML(paper){
+  return paper.sections.map(sec=>`<p class="secintro">${esc(sec.intro)}</p>`+sec.qs.map(q=>`
+   <div class="q" id="q_${q.id}"><div class="qhead"><span class="qn">${q.n||""}</span><div style="flex:1">
+   ${q.pre?`<p class="pre">${esc(q.pre)}</p>`:""}<p style="margin:0">${esc(q.p)}</p>
+   ${q.ref?`<button class="refbtn" data-ref="${q.ref.join("|")}">Show lines ${q.ref[1]}${q.ref[2]!==q.ref[1]?"–"+q.ref[2]:""}</button>`:""}
+   ${inputHTML(q)}<div class="marks">[${q.m}]</div></div></div></div>`).join("")).join("")+
+   `<div class="row" style="margin-top:16px"><button class="btn" data-go="writing">Go to the writing section</button></div>`;
+}
+function writingHTML(paper){
+  const w=paper.writing, words=countWords(S.w);
+  return `<div class="card"><div class="qhead"><span class="qn">${w.n}</span><div style="flex:1">
+  <p style="font-weight:700">${esc(w.task)}</p><p style="margin-bottom:4px">${esc(w.listIntro)}</p><ul style="margin:0 0 10px;padding-left:22px">${w.list.map(l=>`<li>${esc(l)}</li>`).join("")}</ul>
+  ${w.after?`<p>${esc(w.after)}</p>`:""}<p class="marks" style="text-align:left">[25 marks]</p></div></div>
+  <label class="flabel" for="plan">Space for your plan</label><textarea id="plan" rows="4" placeholder="Ideas, paragraphs, words you want to use…">${esc(S.plan)}</textarea>
+  <label class="flabel" for="wtext">Write your ${w.kind==="persuasive"?"text":"story"} here</label>
+  <textarea id="wtext" rows="16" class="serif" placeholder="Title…">${esc(S.w)}</textarea>
+  <div class="wc" id="wc">${words} words</div>
+  <p class="muted" style="font-size:.9rem;margin-top:6px">Leave an empty line between paragraphs.</p></div>
+  <div class="row" style="margin-top:16px"><button class="btn" id="finish">Finish and send to Dad</button></div>`;
+}
+function countWords(t){ return (t||"").trim().split(/\s+/).filter(Boolean).length; }
+
+function test(){
+  const paper=P(S.paper);
+  app.innerHTML=`<div class="top"><div class="topline"><button class="btn ghost small" id="back" aria-label="Back to start">‹ Exit</button>
+   <span class="ptitle">${esc(paper.short)}</span><span class="timer" id="timer"></span></div>
+   <div class="tabs" role="tablist">${[["insert","Insert"],["reading","Reading"],["writing","Writing"]].map(([k,l])=>`<button class="tab ${TAB===k?"on":""}" data-tab="${k}" role="tab" aria-selected="${TAB===k}">${l}</button>`).join("")}</div></div>
+   <div id="pane"></div><div id="sheet"></div>`;
+  document.getElementById("back").onclick=home;
+  app.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{TAB=b.dataset.tab; test(); window.scrollTo(0,0);});
+  const pane=document.getElementById("pane");
+  if(TAB==="insert") pane.innerHTML=insertHTML(paper)+`<div class="row" style="margin-top:16px"><button class="btn" data-go="reading">Go to the questions</button></div>`;
+  if(TAB==="reading") pane.innerHTML=readingHTML(paper);
+  if(TAB==="writing") pane.innerHTML=writingHTML(paper);
+  wire(pane, paper); tick(); clearInterval(timerId); timerId=setInterval(tick,1000);
+}
+function tick(){
+  const el=document.getElementById("timer"); if(!el||!S) return;
+  const used=Math.floor((Date.now()-S.start)/1000), left=LIMIT-used;
+  const f=s=>`${Math.floor(Math.abs(s)/60)}:${String(Math.abs(s)%60).padStart(2,"0")}`;
+  el.textContent = left>=0 ? `${f(left)} left` : `Time’s up (+${f(left)})`;
+  el.classList.toggle("late", left<300);
+}
+let saveT=null; const later=()=>{clearTimeout(saveT); saveT=setTimeout(save,300);};
+function wire(root, paper){
+  root.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{TAB=b.dataset.go; test(); window.scrollTo(0,0);});
+  root.querySelectorAll("textarea[data-q]").forEach(t=>{ grow(t); t.addEventListener("input",()=>{ grow(t);
+    const id=t.dataset.q;
+    if(t.dataset.i!=null){ const v=(S.ans[id]||[]).slice(); v[+t.dataset.i]=t.value; S.ans[id]=v; }
+    else if(t.dataset.fi!=null){ const v=Object.assign({c:null,f:[]},S.ans[id]); v.f=v.f.slice(); v.f[+t.dataset.fi]=t.value; S.ans[id]=v; }
+    else S.ans[id]=t.value; later(); }); });
+  root.querySelectorAll("input[data-q]").forEach(inp=>inp.addEventListener("change",()=>{
+    const id=inp.dataset.q, q=allQs(paper).find(x=>x.id===id);
+    if(q.type==="mc") S.ans[id]=inp.dataset.v;
+    else if(q.type==="multi"){ let v=(S.ans[id]||[]).slice(); v=inp.checked?[...v,inp.dataset.v]:v.filter(x=>x!==inp.dataset.v); S.ans[id]=v; }
+    else if(q.type==="choice"){ const v=Object.assign({c:null,f:[]},S.ans[id]); v.c=inp.dataset.c; S.ans[id]=v; }
+    save();
+    const box=inp.closest(".opts"); box.querySelectorAll("label.opt").forEach(l=>l.classList.toggle("on", l.querySelector("input").checked));
+  }));
+  root.querySelectorAll(".refbtn").forEach(b=>b.onclick=()=>{ const [k,f,t]=b.dataset.ref.split("|"); const tx=paper.texts.find(x=>x.key===k);
+    const sh=document.getElementById("sheet");
+    sh.innerHTML=`<div class="sheet-wrap" id="sw"><div class="card" role="dialog" aria-label="Lines from the text"><h3>${esc(tx.name)} · lines ${f}${f!==t?"–"+t:""}</h3><div class="lines">${linesHTML(tx,+f,+t)}</div>
+    <div class="row" style="margin-top:12px"><button class="btn ghost" id="cl">Close</button></div></div></div>`;
+    document.getElementById("cl").onclick=()=>sh.innerHTML=""; document.getElementById("sw").onclick=e=>{if(e.target.id==="sw")sh.innerHTML="";}; });
+  const plan=root.querySelector("#plan"), wt=root.querySelector("#wtext");
+  if(plan) plan.oninput=()=>{S.plan=plan.value; later();};
+  if(wt) wt.oninput=()=>{S.w=wt.value; document.getElementById("wc").textContent=countWords(S.w)+" words"; later();};
+  const fin=root.querySelector("#finish"); if(fin) fin.onclick=confirmFinish;
+}
+function grow(t){ t.style.height="auto"; t.style.height=Math.max(t.scrollHeight+4,64)+"px"; }
+
+function answered(q){ const a=S.ans[q.id];
+  if(q.type==="text") return !!(a&&a.trim());
+  if(q.type==="mc") return !!a; if(q.type==="multi") return !!(a&&a.length);
+  if(q.type==="two") return !!(a&&a.some(x=>x&&x.trim()));
+  if(q.type==="choice") return !!(a&&a.c); return false; }
+function confirmFinish(){
+  const paper=P(S.paper), empty=allQs(paper).filter(q=>!answered(q)).length, words=countWords(S.w);
+  const sh=document.getElementById("sheet");
+  sh.innerHTML=`<div class="sheet-wrap"><div class="card" role="dialog" aria-label="Finish the paper"><h2>Finish and send?</h2>
+  <p>${empty?`You left <b>${empty}</b> reading question${empty>1?"s":""} empty.`:"You answered every reading question."}</p>
+  <p>Your writing has <b>${words}</b> words.${words<100?" Cambridge expects a full piece of writing — try to write more if you have time.":""}</p>
+  <p class="muted">After you send it, you can’t change your answers.</p>
+  <div class="row"><button class="btn ghost" id="cl">Keep working</button><button class="btn" id="ok">Finish</button></div></div></div>`;
+  document.getElementById("cl").onclick=()=>sh.innerHTML="";
+  document.getElementById("ok").onclick=async()=>{ S.end=Date.now(); S.submitted=true; S.id=S.id||Math.random().toString(36).slice(2,10);
+    S.code=await pack({v:1,id:S.id,paper:S.paper,name:S.name,start:S.start,end:S.end,ans:S.ans,plan:S.plan,w:S.w}); save(); done(); };
+}
+function b64u(bytes){ let s=""; bytes.forEach(b=>s+=String.fromCharCode(b)); return btoa(s).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""); }
+async function pack(o){ const raw=new TextEncoder().encode(JSON.stringify(o));
+  try{ if(window.CompressionStream){ const cs=new Blob([raw]).stream().pipeThrough(new CompressionStream("deflate-raw"));
+    const buf=new Uint8Array(await new Response(cs).arrayBuffer()); return "z"+b64u(buf); } }catch(e){}
+  return "j"+b64u(raw); }
+function done(){
+  clearInterval(timerId);
+  const paper=P(S.paper), url=new URL(PARENT_FILE, location.href).href.split("#")[0]+"#"+S.code;
+  const mins=Math.round((S.end-S.start)/60000);
+  app.innerHTML=`<h1>Well done, ${esc(S.name)}!</h1><div class="card"><p>You finished <b>${esc(paper.title)}</b> in ${mins} minutes.</p>
+  <p>Now send your answers to your dad. He will mark your test and tell you your score.</p>
+  <div class="row" style="flex-direction:column"><button class="btn" id="share">Send to Dad</button>
+  <button class="btn ghost" id="wa">Send by WhatsApp</button><button class="btn ghost" id="copy">Copy the link</button></div>
+  <p class="muted" id="msg" style="margin-top:10px"></p></div>
+  <div class="row" style="margin-top:16px;flex-direction:column"><button class="btn ghost" id="home">Back to the start</button>
+  <button class="btn ghost" id="redo" style="color:var(--pen)">Delete my answers and do this paper again</button></div>`;
+  const text=`English ${paper.short} – ${S.name}`;
+  const share=document.getElementById("share");
+  if(!navigator.share) share.classList.add("hidden");
+  share.onclick=async()=>{ try{ await navigator.share({title:text,text:text,url}); }catch(e){} };
+  document.getElementById("wa").onclick=()=>{ location.href="https://wa.me/?text="+encodeURIComponent(text+"\n"+url); };
+  document.getElementById("copy").onclick=async()=>{ try{ await navigator.clipboard.writeText(url); document.getElementById("msg").textContent="Link copied. Paste it in a message to your dad."; }catch(e){ document.getElementById("msg").textContent=url; } };
+  document.getElementById("home").onclick=home;
+  document.getElementById("redo").onclick=()=>{ if(confirm("Delete your answers for this paper and start again?")){ try{localStorage.removeItem(KEY(S.paper))}catch(e){} home(); } };
+}
+home();
+</script></body></html>

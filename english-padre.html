@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Calificación – English Checkpoint Stage 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Kalam:wght@700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF2F8; --card:#FFFFFF; --ink:#1C2B4A; --soft:#56627A; --line:#CBD5E4; --rule:#DDE5F1;
+  --pen:#C2303C; --blue:#2447A8; --on-blue:#FFFFFF; --hl:#FFE45C; --hl-ink:#1C2440;
+  --ok:#1D8556; --ok-bg:#E2F3EA; --warn:#9A6200; --warn-bg:#FFF2D6; --bad-bg:#FBE5E7;
+  color-scheme: light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#111A28; --card:#18243A; --ink:#E4EAF6; --soft:#A2AEC4; --line:#31415D; --rule:#25344D;
+  --pen:#FF8790; --blue:#8FB0FF; --on-blue:#0E1626; --hl:#5C5221; --hl-ink:#FFF4C4;
+  --ok:#5CD89C; --ok-bg:#163527; --warn:#F2C35B; --warn-bg:#3A2E12; --bad-bg:#3A1E25; color-scheme: dark; } }
+:root[data-theme="dark"]{
+  --bg:#111A28; --card:#18243A; --ink:#E4EAF6; --soft:#A2AEC4; --line:#31415D; --rule:#25344D;
+  --pen:#FF8790; --blue:#8FB0FF; --on-blue:#0E1626; --hl:#5C5221; --hl-ink:#FFF4C4;
+  --ok:#5CD89C; --ok-bg:#163527; --warn:#F2C35B; --warn-bg:#3A2E12; --bad-bg:#3A1E25; color-scheme: dark; }
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 120px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.5;-webkit-text-size-adjust:100%}
+main{max-width:640px;margin:0 auto;padding:14px 14px 60px}
+h1,h2,h3,.hand{font-family:"Kalam","Chalkboard SE","Comic Sans MS",cursive;color:var(--pen);font-weight:700;line-height:1.15}
+h1{font-size:2.1rem;margin:10px 0 4px} h2{font-size:1.45rem;margin:0 0 8px} h3{font-size:1.2rem;margin:0 0 6px}
+p{margin:0 0 10px} .muted{color:var(--soft)}
+button,input,textarea,select{font:inherit;color:inherit}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:16px;margin-top:12px}
+.btn{appearance:none;border:none;border-radius:10px;padding:13px 18px;min-height:50px;background:var(--blue);color:var(--on-blue);font-weight:700;cursor:pointer;font-size:1rem}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.btn.small{min-height:40px;padding:8px 12px;font-size:.92rem}
+.btn:disabled{opacity:.45}
+:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.field,textarea{width:100%;padding:12px;border-radius:10px;border:2px solid var(--line);background:var(--card)}
+textarea{resize:vertical;line-height:30px;padding:2px 12px 8px;
+  background-image:linear-gradient(transparent 29px,var(--rule) 29px,var(--rule) 30px);background-size:100% 30px;background-attachment:local}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>.btn{flex:1}
+.serif{font-family:"Source Serif 4",Georgia,"Times New Roman",serif}
+.hidden{display:none!important}
+.sheet-wrap{position:fixed;inset:0;background:rgba(8,12,24,.55);display:flex;align-items:flex-end;justify-content:center;z-index:30;padding:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+.sheet-wrap .card{width:100%;max-width:640px;max-height:82vh;overflow:auto;margin:0}
+.lines{font-family:"Source Serif 4",Georgia,serif;font-size:1.02rem;line-height:1.55}
+.ln{display:grid;grid-template-columns:2.2em 1fr;gap:6px;min-height:1.55em}
+.ln .no{color:var(--soft);font-family:"Atkinson Hyperlegible",sans-serif;font-size:.78rem;text-align:right;padding-top:.25em}
+.ln.head .tx{font-weight:700}
+.ln.mark{background:var(--hl);color:var(--hl-ink);border-radius:4px}
+.ln.mark .no{color:var(--hl-ink)}
+.sep{text-align:center;letter-spacing:.4em;color:var(--soft)}
+.gloss{font-size:.9rem;color:var(--soft);border-top:1.5px dashed var(--line);margin-top:12px;padding-top:8px}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}}
+
+.sum{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);margin:0 -14px;padding:10px 14px;border-bottom:1.5px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:11;background:var(--bg)}
+.sumrow{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;text-align:center}
+.sumrow div{background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:6px 4px}
+.sumrow b{display:block;font-size:1.25rem;font-variant-numeric:tabular-nums}
+.sumrow span{font-size:.8rem;color:var(--soft)}
+.big{font-family:"Kalam",cursive;color:var(--pen);font-size:3.4rem;line-height:1;font-weight:700}
+.level{display:inline-block;background:var(--hl);color:var(--hl-ink);border-radius:999px;padding:4px 12px;font-weight:700;margin-top:6px}
+.item{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:12px;margin-top:10px}
+.item .h{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.qn{font-family:"Kalam",cursive;color:var(--pen);font-weight:700;font-size:1.15rem}
+.tag{font-size:.78rem;font-weight:700;border-radius:999px;padding:2px 9px;white-space:nowrap}
+.tag.auto{background:var(--ok-bg);color:var(--ok)} .tag.rev{background:var(--warn-bg);color:var(--warn)}
+.ans{background:var(--bg);border-radius:8px;padding:8px 10px;margin:8px 0;white-space:pre-wrap;word-break:break-word}
+.ans.empty{color:var(--soft);font-style:italic}
+.key{font-size:.92rem;color:var(--soft)}
+.seg{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.seg button{min-width:48px;min-height:44px;border-radius:10px;border:2px solid var(--line);background:var(--card);font-weight:700;cursor:pointer}
+.seg button.on{background:var(--blue);color:var(--on-blue);border-color:var(--blue)}
+.seg button.sugg:not(.on){border-style:dashed;border-color:var(--blue)}
+.wtext{white-space:pre-wrap;font-family:"Source Serif 4",Georgia,serif;font-size:1.02rem;line-height:1.6;background:var(--bg);border-radius:10px;padding:12px}
+.stats{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.stats span{background:var(--bg);border-radius:999px;padding:3px 10px;font-size:.85rem}
+.crit{border-top:1.5px dashed var(--line);padding-top:10px;margin-top:12px}
+.desc{font-size:.92rem;color:var(--soft);margin-top:6px}
+details summary{cursor:pointer;font-weight:700;color:var(--blue);padding:6px 0}
+.hist button{display:flex;justify-content:space-between;width:100%;text-align:left;padding:12px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);margin-top:8px;cursor:pointer}
+</style></head>
+<body><main id="app"></main>
+<script>
+const DATA = {"papers": [{"id": 1, "title": "Paper 1 – Non-fiction", "short": "Non-fiction", "texts": [{"key": "A", "name": "Text A", "intro": "", "lines": ["Stargazing* nights for families", "", "Dark skies, dazzling stars and a deep, quiet calm:", "stargazing is simply the most magical way to spend a", "night! Our observatory, which sits high in the hills, is", "the perfect place to begin. But with so many choices, how", "do you pick the right night for your family? Read on.", "", "When should we come?", "The sky is darkest around the new moon, when even faint", "stars can be seen. If you would rather look at the Moon", "itself, choose a night close to the full moon – its craters", "look amazing through a telescope*. Clear nights are best,", "so always check the weather before you travel.", "", "How long should we stay?", "Our short session lasts one hour and is ideal for younger", "children. If your family is keen to get stuck in, book the", "all-night ‘Sky Marathon’ instead. Hopping from telescope to", "telescope until sunrise is thrilling but tiring!", "", "What should we bring?", "Warm clothes are essential: nights in the hills can be", "freezing. You might also want to bring a blanket and a flask", "of hot chocolate. However, please leave bright torches at", "home, because they make it harder for everyone’s eyes to", "get used to the dark.", "", "Who will help us?", "Our friendly guides know the night sky like the back of", "their hand. Don’t be shy – ask them anything!"], "heads": [1, 9, 16, 22, 29], "glossary": ["*stargazing: looking at the stars and planets at night", "*telescope: an instrument that makes faraway objects look bigger and closer"]}, {"key": "B", "name": "Text B", "intro": "", "lines": ["Caroline Herschel: the comet hunter", "", "Most people have heard of famous astronomers*, but fewer", "know about Caroline Herschel – a singer who became one of", "the greatest comet hunters in history!", "", "Caroline was born in Germany in 1750. As a girl, she was", "expected to cook and clean rather than study. Despite this,", "she astonishingly went on to discover eight comets*.", "", "In 1772, Caroline moved to England to live with her brother", "William, a music teacher. At first, she trained as a singer.", "Soon, however, William became obsessed with the night sky.", "He taught Caroline mathematics, and together they built", "their own telescopes in the house.", "", "In 1781, a new planet – Uranus – was discovered by William.", "The King was so impressed that he paid William to work as an", "astronomer. Six years later, Caroline was given a salary of", "her own: she was the first woman ever to be paid as a scientist!", "", "Today, a comet and a crater on the Moon are named after her.", "She lived until she was ninety-seven, and she never stopped", "loving the stars."], "heads": [1], "glossary": ["*astronomer: a scientist who studies stars and planets", "*comet: a ball of ice and dust that travels around the Sun"]}], "sections": [{"intro": "Read Text A, in the insert, and answer Questions 1–7.", "qs": [{"id": "1a", "n": "1", "pre": "Look at lines 3–7.", "ref": ["A", 3, 7], "p": "(a) Look at line 3: ‘Dark skies, dazzling stars and a deep, quiet calm’. Name the figurative language technique the writer uses here.", "type": "text", "m": 1, "k": {"re": ["all?it+[ie]?r?at"], "note": "Alliteration (aliteración). Acepta la palabra mal escrita si se reconoce."}}, {"id": "1b", "ref": ["A", 3, 7], "p": "(b) Give one opinion from this section.", "type": "text", "m": 1, "k": {"re": ["magical", "perfect place"], "note": "‘stargazing is simply the most magical way to spend a night’ o ‘the perfect place to begin’."}}, {"id": "1c", "ref": ["A", 3, 7], "p": "(c) Give one example of a relative pronoun.", "type": "text", "m": 1, "k": {"re": ["\\bwhich\\b"], "note": "which (línea 5). Si copia una frase larga, solo vale si señala la palabra."}}, {"id": "2", "n": "2", "pre": "Look at lines 16–20.", "ref": ["A", 16, 20], "p": "Find a short phrase which means to start doing something with a lot of energy.", "type": "text", "m": 1, "k": {"re": ["stuck in"], "note": "(to) get stuck in."}}, {"id": "3a", "n": "3", "pre": "Look at lines 9–14.", "ref": ["A", 9, 14], "p": "(a) What punctuation mark could replace the dash ( – ) in line 12?", "type": "text", "m": 1, "k": {"re": ["(?<!semi)colon"], "note": "A colon (dos puntos). Tiene que nombrarlo, no basta con dibujar el signo."}}, {"id": "3b", "ref": ["A", 16, 20], "p": "(b) Look at lines 19–20. Explain the meaning of the phrase ‘Hopping from telescope to telescope’.", "type": "text", "m": 2, "k": {"groups": [["quick", "fast", "hurr", "rush", "energ", "jump"], ["one.*(to|next|another|other)", "from.*to", "different", "many", "each", "all the", "lots of"]], "note": "1 punto: idea de moverse rápido/con energía. 1 punto: idea de pasar de un telescopio a otro."}}, {"id": "4", "n": "4", "p": "You are booking a stargazing night. Would you prefer the short session or the ‘Sky Marathon’? Tick one box. Explain your choice giving evidence from the text.", "type": "choice", "o": ["I would prefer the short session", "I would prefer the Sky Marathon"], "f": ["Reason for your choice:", "Evidence from the text:"], "m": 2, "k": {"chain": true, "by": {"I would prefer the short session": [["tired", "relax", "young", "short", "sleep", "easy", "less", "not.*long", "bored"], ["one hour", "ideal for younger", "tiring"]], "I would prefer the Sky Marathon": [["excit", "thrill", "more", "fun", "sunrise", "whole night", "all night", "long"], ["thrilling", "until sunrise", "all-night", "all night", "stuck in"]]}, "note": "La razón debe ser con sus palabras y coincidir con la casilla. Si la razón vale 0, la evidencia también vale 0. Corta: más descansada/para niños pequeños + ‘one hour… ideal for younger children’. Marathon: más emocionante + ‘thrilling’ / ‘until sunrise’ (si añade ‘tiring’ no vale la evidencia)."}}, {"id": "5a", "n": "5", "pre": "Look at lines 22–27.", "ref": ["A", 22, 27], "p": "(a) ‘On the other hand’ is often used to introduce an opposite idea. Which word is used in the same way in this section?", "type": "text", "m": 1, "k": {"re": ["however"], "note": "However."}}, {"id": "5b", "ref": ["A", 22, 27], "p": "(b) Look at line 24. Why has the modal verb ‘might’ been used here?", "type": "text", "m": 1, "k": {"re": ["possib", "option", "not (have|need) to", "don.?t have to", "not definite", "not sure", "maybe", "choice", "choose", "not essential", "not necessary", "if you want"], "note": "Idea de posibilidad u opción: no es obligatorio llevarlo."}}, {"id": "6", "n": "6", "p": "The text is structured in different ways to make the information easy to read. Give two of the ways.", "type": "two", "f": ["•", "•"], "m": 2, "k": {"pool": [["heading", "title", "subtitle"], ["question"], ["paragraph"], ["glossary"], ["space", "gap", "line break", "sections"]], "note": "Subtítulos/headings, subtítulos en forma de pregunta, párrafos cortos, espacios entre párrafos, glosario. Un punto por cada forma distinta."}}, {"id": "7", "n": "7", "p": "Where do you think you would find a text like this? Tick one box.", "type": "mc", "o": ["A school science textbook", "A leaflet from an observatory", "A dictionary", "A newspaper report"], "m": 1, "k": {"a": "A leaflet from an observatory", "note": "Leaflet from an observatory (texto persuasivo/informativo para visitantes)."}}]}, {"intro": "Read Text B, in the insert, and answer Questions 8–13.", "qs": [{"id": "8a", "n": "8", "pre": "Look at lines 7–9.", "ref": ["B", 7, 9], "p": "(a) Find an adverb which shows that the writer is surprised by what Caroline did.", "type": "text", "m": 1, "k": {"re": ["astonish"], "note": "astonishingly."}}, {"id": "8b", "ref": ["B", 7, 9], "p": "(b) Which word in line 8 shows that Caroline succeeded even though things were difficult for her?", "type": "text", "m": 1, "k": {"re": ["despite"], "note": "Despite."}}, {"id": "9a", "n": "9", "pre": "Look at lines 17–20.", "ref": ["B", 17, 20], "p": "(a) What is the purpose of the dashes ( – ) in line 17? Tick one box.", "type": "mc", "o": ["to add a detail", "to add a meaning", "to add a comment", "to add an explanation"], "m": 1, "k": {"a": "to add a detail", "note": "to add a detail (el nombre del planeta)."}}, {"id": "9b", "ref": ["B", 17, 20], "p": "(b) Give one example of a passive verb form from this section.", "type": "text", "m": 1, "k": {"re": ["was discovered", "was given", "be paid"], "note": "was discovered / was given / (to) be paid. ‘was’ o ‘discovered’ solos no valen."}}, {"id": "9c", "ref": ["B", 17, 20], "p": "(c) Why has a colon ( : ) been used in line 20?", "type": "text", "m": 1, "k": {"re": ["explain", "explanation", "more information", "more detail", "why", "introduce", "tell(s)? (us )?more", "what"], "note": "Para introducir una explicación / más información sobre el salario de Caroline."}}, {"id": "10", "n": "10", "pre": "Look at line 22.", "ref": ["B", 22, 24], "p": "The text is mainly in the past tense. Why is the present tense used in line 22?", "type": "text", "m": 1, "k": {"re": ["still", "today", "now", "true", "fact", "present"], "note": "Porque sigue siendo verdad hoy (el cometa y el cráter todavía llevan su nombre)."}}, {"id": "11a", "n": "11", "p": "(a) The writer uses adverbial phrases to help structure the text. Give one example of a three-word adverbial phrase of place.", "type": "text", "m": 1, "k": {"re": ["in the house", "on the moon"], "note": "in the house (línea 15) / on the Moon (línea 22)."}}, {"id": "11b", "p": "(b) Give one example of an adverbial phrase of time which introduces a new paragraph.", "type": "text", "m": 1, "k": {"re": ["1772", "1781", "today"], "note": "In 1772 / In 1781 / Today. (‘At first’ y ‘Six years later’ no abren párrafo.)"}}, {"id": "12", "n": "12", "p": "Text B is a biographical text. Give one feature of a biography used in Text B.", "type": "text", "m": 1, "k": {"re": ["date", "year", "real", "life", "past tense", "chronolog", "order", "third person", "facts? about", "born", "died", "true story"], "note": "Rasgo general de biografía: persona real, fechas importantes, orden cronológico, tercera persona, pasado. Mencionar solo a Caroline sin un rasgo general no vale."}}, {"id": "13", "n": "13", "p": "Which two themes occur throughout Text B? Tick two boxes.", "type": "multi", "o": ["the night sky", "cooking and cleaning", "working hard to succeed", "kings and queens", "singing lessons"], "m": 2, "k": {"a": ["the night sky", "working hard to succeed"], "note": "the night sky + working hard to succeed. 0 si marca más de dos."}}]}], "writing": {"n": "14", "task": "Your school is starting a new after-school club, but not many students have joined yet. Write a persuasive text for the school website to make more students want to join.", "list": ["an astronomy club", "a robotics club", "a football club", "a drama club", "a cooking club", "a club of your choice"], "listIntro": "The club could be:", "after": "Remember to use the features of persuasive writing.", "kind": "persuasive"}}, {"id": 2, "title": "Paper 2 – Fiction", "short": "Fiction", "texts": [{"key": "T", "name": "Text", "intro": "Text for Section A. Isla and her father have travelled to a small island. Gran looks after the lighthouse there, and she needs their help.", "lines": ["Isla pressed her forehead against the cold glass and stared", "at the grey sea, the way a sailor stares at a storm he means", "to beat. The little ferry* groaned and rolled beneath her feet.", "Her father had gone below an hour ago, his face as green as", "the waves, and all the other passengers had done the same.", "", "But Isla did not want to miss a single thing.", "", "She crept out of the cabin and onto the slippery deck, her", "scarf whipping around her face. Then, through the drizzle,", "the island appeared. On its highest cliff stood the", "lighthouse, tall and white and proud, watching over the", "water like an old soldier who refused to sleep.", "******", "By the time they had climbed the cliff path, the sun was", "sinking. A horse and cart had carried their trunk* as far as", "the gate; after that, Father carried it himself, puffing.", "Gran was waiting in the doorway. She was holding Father’s", "letter so close to her face that it almost touched her nose.", "‘It looks … smaller than I remembered,’ Isla whispered.", "‘Everything looks smaller when you grow,’ said Gran, and she", "laughed – a little too loudly. ‘Now, come inside before the", "wind steals you away!’", "As they stepped into the kitchen, Gran missed the last step", "and grabbed the door frame.", "‘Silly old step,’ she muttered. ‘It moves every winter.’", "******", "That night, Isla could not sleep. The oil lamp beside her", "bed flickered, throwing jumpy shadows onto the ceiling.", "Through her window, she could see the lighthouse – and its", "lamp was dark.", "She pulled on her boots and tiptoed down the stairs. In the", "kitchen, Father and Gran were talking in low voices.", "‘You can’t keep climbing those steps every night, Mother,’", "Father was saying. ‘Not when you can’t even read my letters.’", "‘And who else will do it?’ said Gran. ‘The ships need that", "light.’", "Isla slipped out of the back door. The wind tugged at her", "coat, but she did not stop until she reached the bottom of", "the lighthouse. One hundred and twelve steps spiralled up", "into the darkness above her.", "She took a deep breath, gripped the cold iron rail and began", "to climb."], "heads": [], "glossary": ["*ferry: a boat that carries people across a short stretch of water", "*trunk: a large, strong box for carrying clothes on a long journey"]}], "sections": [{"intro": "Read the Text in the insert, and answer Questions 1–17.", "qs": [{"id": "1", "n": "1", "pre": "Look at the first section (lines 1–13).", "ref": ["T", 1, 5], "p": "Where is Isla?", "type": "text", "m": 1, "k": {"re": ["ferry", "boat", "ship", "sea", "cabin", "deck"], "note": "On a ferry / a boat (at sea)."}}, {"id": "2", "n": "2", "ref": ["T", 1, 3], "p": "Look at the first sentence. How does Isla feel about the journey? Tick one box.", "type": "mc", "o": ["frightened", "bored", "determined", "sad"], "m": 1, "k": {"a": "determined", "note": "determined (‘like a sailor stares at a storm he means to beat’)."}}, {"id": "3", "n": "3", "ref": ["T", 1, 5], "p": "Why are the other passengers not looking at the sea?", "type": "text", "m": 1, "k": {"re": ["sick", "green", "ill", "unwell", "below", "cabin", "inside", "downstairs", "rough", "weather", "storm", "waves"], "note": "Se marearon / bajaron como el papá (‘his face as green as the waves… the other passengers had done the same’)."}}, {"id": "4", "n": "4", "pre": "Look at line 7.", "ref": ["T", 6, 8], "p": "How does the structure of this sentence grab the reader’s attention? Give two ways.", "type": "two", "f": ["•", "•"], "m": 2, "k": {"pool": [["short"], ["own line", "own paragraph", "single line", "one line", "separate", "alone", "by itself", "on its own", "new line", "one sentence paragraph"], ["\\bbut\\b"]], "note": "Es corta; está sola en su propio párrafo/línea; empieza con ‘But’. No vale ‘está en otra línea’ sin la idea de que está sola."}}, {"id": "5a", "n": "5", "pre": "Look at lines 9–13.", "ref": ["T", 9, 13], "p": "(a) Give a short phrase which means ‘moved quietly so that nobody would notice’.", "type": "text", "m": 1, "k": {"re": ["\\bcrept\\b"], "note": "crept out (of the cabin). Sin palabras de más."}}, {"id": "5b", "ref": ["T", 9, 13], "p": "(b) Give one example of personification from this section.", "type": "text", "m": 1, "k": {"re": ["watching", "proud"], "note": "‘(the lighthouse) watching over the water’ / ‘proud’. ‘like an old soldier’ es símil, no personificación."}}, {"id": "6", "n": "6", "pre": "Look at the second section (lines 15–26).", "p": "Why is a new section started here? Tick two boxes. To show a change of…", "type": "multi", "o": ["topic", "setting", "viewpoint", "character", "time"], "m": 2, "k": {"a": ["setting", "time"], "note": "setting + time. 0 si marca más de dos."}}, {"id": "7", "n": "7", "p": "Do you think Father cares about Gran? Tick one box. Give evidence from the text to support your answer.", "type": "choice", "o": ["Yes", "No"], "f": ["Evidence:"], "m": 1, "k": {"chain": false, "by": {"Yes": [["came", "travel", "help", "carried", "climbing", "steps", "worr", "can.?t keep", "letter"]], "No": [["puff", "didn.?t", "angry", "shout"]]}, "note": "Sí: vinieron hasta la isla a ayudarla; le preocupa que suba las escaleras (‘You can’t keep climbing those steps’). La evidencia debe coincidir con la casilla; sin evidencia no hay punto."}}, {"id": "8", "n": "8", "ref": ["T", 15, 16], "p": "Look at the first sentence in line 15. Give the main clause.", "type": "text", "m": 1, "k": {"re": ["the sun was sinking"], "note": "the sun was sinking."}}, {"id": "9a", "n": "9", "pre": "Look at line 20.", "ref": ["T", 20, 20], "p": "(a) Why is an ellipsis ( … ) used?", "type": "text", "m": 1, "k": {"re": ["pause", "hesitat", "stop", "think", "search", "find.*word", "right word", "break"], "note": "Muestra una pausa/duda: busca la palabra correcta. NO valen ‘crear suspenso’ ni ‘palabras omitidas’."}}, {"id": "9b", "ref": ["T", 20, 20], "p": "(b) What does this tell us about how Isla is feeling?", "type": "text", "m": 1, "k": {"re": ["surpris", "disappoint", "unsure", "shock", "confus", "sad", "not sure", "uncertain"], "note": "Sorprendida / decepcionada / insegura (esperaba algo más grande)."}}, {"id": "10", "n": "10", "pre": "Look at lines 21–22.", "ref": ["T", 21, 23], "p": "What does ‘she laughed – a little too loudly’ tell us about how Gran was feeling?", "type": "text", "m": 1, "k": {"re": ["pretend", "act", "fake", "hid", "not really", "worr", "nervous", "embarrass", "awkward", "cover"], "note": "Fingía estar bien / escondía su preocupación o vergüenza. ‘Estaba feliz’ no vale."}}, {"id": "11", "n": "11", "pre": "Look at lines 28–31.", "ref": ["T", 28, 31], "p": "Give two words or phrases that make this part of the story feel tense or spooky.", "type": "two", "f": ["Evidence 1:", "Evidence 2:"], "m": 2, "k": {"pool": [["flicker"], ["jumpy", "shadow"], ["dark"], ["could not sleep", "couldn.?t sleep"]], "note": "flickered / jumpy shadows / its lamp was dark / could not sleep. Un punto por cada una distinta."}}, {"id": "12", "n": "12", "pre": "Look at lines 34–35.", "ref": ["T", 34, 35], "p": "What does Father mean? Tick one box.", "type": "mc", "o": ["‘It is not safe for you to do this job any more.’", "‘You should climb the steps faster.’", "‘You should buy a new lamp.’", "‘You should write me more letters.’"], "m": 1, "k": {"a": "‘It is not safe for you to do this job any more.’", "note": "It is not safe for you to do this job any more."}}, {"id": "13", "n": "13", "pre": "Look at lines 38–43.", "ref": ["T", 38, 43], "p": "Why does Isla slip out of the back door? Tick one box.", "type": "mc", "o": ["She wants to go back home.", "She wants to light the lamp herself.", "She is angry with Gran.", "She wants to look at the sea."], "m": 1, "k": {"a": "She wants to light the lamp herself.", "note": "She wants to light the lamp herself."}}, {"id": "14", "n": "14", "pre": "Look at lines 28–33.", "ref": ["T", 28, 33], "p": "This story is told from Isla’s viewpoint. Give one example of how the writer shows her viewpoint.", "type": "text", "m": 1, "k": {"re": ["window", "could see", "could not sleep", "couldn.?t sleep", "tiptoe", "shadow", "ceiling"], "note": "‘Through her window, she could see…’ / ‘Isla could not sleep’ / ‘she tiptoed’. Respuestas generales como ‘vemos lo que ella ve’ no valen solas."}}, {"id": "15", "n": "15", "p": "The writer gradually lets us know that Gran cannot see very well. Find evidence from the text to support this statement.", "type": "two", "f": ["One piece of evidence from the second section (lines 15–26):", "One piece of evidence from the third section (lines 28–43):"], "m": 2, "k": {"per": [["close", "nose", "face", "missed", "step", "door frame", "grabbed"], ["read", "letters"]], "note": "Sección 2: sostiene la carta pegada a la cara / se salta el último escalón. Sección 3: ‘you can’t even read my letters’."}}, {"id": "16", "n": "16", "p": "Give two ways we know this story is set a long time ago.", "type": "two", "f": ["•", "•"], "m": 2, "k": {"pool": [["horse", "cart"], ["oil lamp", "lamp beside"], ["trunk"], ["letter", "no phone", "post"], ["lighthouse keeper", "climb", "light the lamp", "by hand"]], "note": "Caballo y carreta; lámpara de aceite; baúl (trunk); se comunican por carta y no por teléfono; alguien enciende el faro a mano."}}, {"id": "17", "n": "17", "p": "Do you think Isla is brave? Tick one box. Give one reason and one piece of evidence from the text to support your answer.", "type": "choice", "o": ["Yes", "No"], "f": ["Reason:", "Evidence:"], "m": 2, "k": {"chain": true, "by": {"Yes": [["help", "dark", "alone", "night", "scar", "storm", "steps", "climb", "not afraid", "risk"], ["climb", "dark", "112", "hundred", "slippery", "crept", "slipped out", "deep breath", "did not stop"]], "No": [["scared", "afraid", "nervous", "deep breath", "shouldn.?t", "sneak"], ["deep breath", "whisper", "tiptoe"]]}, "note": "La razón con sus palabras y la evidencia del texto deben coincidir con la casilla. Sí: sale sola de noche a subir 112 escalones en la oscuridad para ayudar. Si la razón vale 0, la evidencia también."}}]}], "writing": {"n": "18", "task": "Write the opening of a story about a character who has to be brave to help someone they love.", "list": ["The main characters: Who is in the story? What is their relationship? Is anyone else involved?", "The setting: Where are they? How did they get there?", "The plot: What is the problem? How does the character have to be brave?", "Where will you choose to stop? Will you leave it on a cliff-hanger?"], "listIntro": "Think about:", "after": "", "kind": "narrative"}}]};
+const esc = s => String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const app=document.getElementById("app");
+const GK="eng6-grades";
+const G = ()=>{ try{return JSON.parse(localStorage.getItem(GK)||"{}")}catch(e){return {}} };
+const putG = g=>{ try{localStorage.setItem(GK,JSON.stringify(g))}catch(e){} };
+const RUB=[
+ {k:"wc",n:"Creación del texto",max:5,d:{0:"Nada que se pueda acreditar.",1:"Hay algo de contenido relacionado con la tarea o se ven algunos rasgos del tipo de texto.",2:"Respuesta relevante, propósito claro y algunos rasgos del tipo de texto; punto de vista sencillo y casi siempre consistente.",3:"Ideas desarrolladas con detalle; rasgos del tipo de texto claros en todo el escrito; punto de vista consistente que mantiene el interés.",4:"Dirigido claramente al lector; rasgos ambiciosos del tipo de texto usados con éxito; relación escritor–lector sostenida.",5:"Igual que 4, pero de forma constante y equilibrada en todo el texto."}},
+ {k:"wv",n:"Vocabulario y lenguaje",max:3,d:{0:"Nada que se pueda acreditar.",1:"A veces usa vocabulario apropiado para el tema.",2:"Vocabulario adecuado; buenos intentos de lenguaje persuasivo o descriptivo (verbos fuertes, superlativos, sinónimos).",3:"Vocabulario especializado usado con efecto en todo el texto (preguntas retóricas, imperativos, palabras que crean ambiente o emoción)."}},
+ {k:"ws",n:"Estructura del texto",max:7,d:{0:"Nada que se pueda acreditar.",1:"Hay algo de organización o secuencia sencilla.",2:"Párrafos o secciones con ideas agrupadas; conectores simples.",3:"Párrafos claros y en orden lógico; conectores simples que unen las partes.",4:"Ideas desarrolladas de forma cohesiva y lógica en casi todo el texto; párrafos organizados para el efecto.",5:"Igual que 4, de forma más consistente.",6:"Ideas manejadas en todo el texto (p. ej. el final conecta con el inicio); conectores avanzados (Moreover, Furthermore, Meanwhile).",7:"Igual que 6, en un texto extenso y muy bien cohesionado."}},
+ {k:"wg",n:"Gramática y puntuación",max:7,d:{0:"Nada que se pueda acreditar.",1:"Algunas oraciones simples correctas; algo de mayúsculas y puntos.",2:"Variedad creciente de oraciones; frases expandidas; tiempos verbales casi siempre correctos; puntuación consistente.",3:"Igual que 2 con intentos de oraciones complejas; comas en listas; apóstrofes correctos.",4:"Gramática casi siempre correcta; oraciones simples, compuestas y complejas; comas para marcar cláusulas; diálogo bien puntuado.",5:"Igual que 4, de forma más segura.",6:"Variedad de oraciones elegidas para lograr efecto; puntuación precisa en oraciones complejas y en el diálogo.",7:"Igual que 6, prácticamente sin errores."}},
+ {k:"ww",n:"Ortografía",max:3,d:{0:"Nada que se pueda acreditar.",1:"Palabras frecuentes, plurales y terminaciones -ing/-ed bien escritas.",2:"Palabras polisilábicas, prefijos/sufijos y dobles consonantes casi siempre bien escritos.",3:"Homófonos (their/there, aloud/allowed) y sufijos difíciles (-tion, -cian) correctos en todo el texto."}}
+];
+const LEVELS=[[90,"I did it outstandingly!"],[70,"I did it"],[50,"I'm almost there"],[0,"I'm not there yet"]];
+
+function fromB64u(s){ s=s.replace(/-/g,"+").replace(/_/g,"/"); while(s.length%4) s+="="; return Uint8Array.from(atob(s),c=>c.charCodeAt(0)); }
+async function unpack(code){
+  code=code.trim(); const h=code.indexOf("#"); if(h>=0) code=code.slice(h+1);
+  const bytes=fromB64u(code.slice(1));
+  if(code[0]==="z"){ const ds=new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate-raw")); return JSON.parse(await new Response(ds).text()); }
+  return JSON.parse(new TextDecoder().decode(bytes));
+}
+const norm = s => String(s||"").toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g," ");
+const hit = (txt, res) => res.some(r=>new RegExp(r,"i").test(norm(txt)));
+
+function auto(q,a){
+  const k=q.k;
+  if(q.type==="mc") return a===k.a?1:0;
+  if(q.type==="multi"){ const s=a||[]; if(s.length>k.a.length) return 0; return Math.min(q.m, s.filter(x=>k.a.includes(x)).length); }
+  if(q.type==="text"){ if(!a||!a.trim()) return 0; if(k.groups) return Math.min(q.m,k.groups.filter(g=>hit(a,g)).length); return hit(a,k.re)?1:0; }
+  if(q.type==="two"){ const v=a||[]; if(k.per) return v.filter((x,i)=>x&&k.per[i]&&hit(x,k.per[i])).length;
+    const used=new Set(); let n=0; v.forEach(x=>{ if(!x) return; const gi=k.pool.findIndex((g,i)=>!used.has(i)&&hit(x,g)); if(gi>=0){used.add(gi);n++;} }); return Math.min(q.m,n); }
+  if(q.type==="choice"){ if(!a||!a.c) return 0; const by=k.by[a.c]; if(!by) return 0; const f=a.f||[];
+    if(q.f.length===1) return f[0]&&hit(f[0],by[0])?1:0;
+    const r = f[0]&&hit(f[0],by[0])?1:0; const e = f[1]&&hit(f[1],by[1])?1:0; return k.chain ? (r? r+e : 0) : r+e; }
+  return 0;
+}
+function fmt(q,a){
+  if(q.type==="text") return a&&a.trim()?esc(a):null;
+  if(q.type==="mc") return a?"☑ "+esc(a):null;
+  if(q.type==="multi") return a&&a.length?a.map(x=>"☑ "+esc(x)).join("\n"):null;
+  if(q.type==="two"){ const v=a||[]; return v.some(x=>x&&x.trim())?q.f.map((f,i)=>`${esc(f)} ${esc(v[i]||"—")}`).join("\n"):null; }
+  if(q.type==="choice"){ if(!a||(!a.c&&!(a.f||[]).some(Boolean))) return null; return `☑ ${esc(a.c||"(sin casilla)")}\n`+q.f.map((f,i)=>`${esc(f)} ${esc((a.f||[])[i]||"—")}`).join("\n"); }
+}
+const words=t=>(t||"").trim().split(/\s+/).filter(Boolean).length;
+
+let SUB=null, PAPER=null, GR=null;
+function save(){ const g=G(); g[SUB.id]=Object.assign(GR,{meta:{name:SUB.name,paper:SUB.paper,end:SUB.end}}); putG(g); }
+
+function start(){
+  const code=location.hash.slice(1);
+  if(code){ unpack(code).then(open).catch(()=>pasteScreen("No pude leer ese link. Revisa que esté completo.")); }
+  else pasteScreen("");
+}
+function pasteScreen(err){
+  const g=G(), ids=Object.keys(g);
+  app.innerHTML=`<h1>Calificación</h1><p class="hand" style="font-size:1.2rem">English Checkpoint · Stage 6</p>
+  <div class="card"><p>Abre el link que te envió tu hijo al terminar la prueba, o pégalo aquí.</p>
+  <textarea id="code" rows="3" placeholder="Pega aquí el link"></textarea>
+  ${err?`<p style="color:var(--pen);margin-top:8px">${esc(err)}</p>`:""}
+  <div class="row" style="margin-top:10px"><button class="btn" id="go">Ver calificación</button></div></div>
+  ${ids.length?`<div class="card hist"><h3>Pruebas calificadas en este teléfono</h3>${ids.map(id=>{const m=g[id].meta||{};const p=DATA.papers.find(x=>x.id===m.paper);
+    return `<button data-id="${id}"><span>${esc(m.name)} · ${esc(p?p.short:"")}<br><small class="muted">${m.end?new Date(m.end).toLocaleDateString("es-CO"):""}</small></span><b>${g[id].total!=null?g[id].total+"/50":""}</b></button>`}).join("")}</div>`:""}`;
+  document.getElementById("go").onclick=()=>{ const v=document.getElementById("code").value; if(!v.trim()) return;
+    unpack(v).then(o=>{ history.replaceState(null,"","#"+v.slice(v.indexOf("#")+1).trim()); open(o); }).catch(()=>pasteScreen("No pude leer ese link. Revisa que esté completo.")); };
+  app.querySelectorAll(".hist button").forEach(b=>b.onclick=()=>{ const sub=g[b.dataset.id].sub; if(sub) open(sub); });
+}
+
+function open(sub){
+  SUB=sub; PAPER=DATA.papers.find(p=>p.id===sub.paper);
+  const g=G(); GR=g[sub.id]||{marks:{},rub:{}}; GR.sub=sub;
+  const qs=PAPER.sections.flatMap(s=>s.qs);
+  qs.forEach(q=>{ if(GR.marks[q.id]==null) GR.marks[q.id]=auto(q,sub.ans[q.id]); });
+  render();
+}
+function totals(){
+  const qs=PAPER.sections.flatMap(s=>s.qs);
+  const r=qs.reduce((s,q)=>s+(GR.marks[q.id]||0),0);
+  const wc=words(SUB.w); let w=RUB.reduce((s,c)=>s+(GR.rub[c.k]||0),0);
+  let cap=""; if(wc<=20){w=0;cap="20 palabras o menos: el writing vale 0.";} else if(wc<=60&&w>7){w=7;cap="Entre 21 y 60 palabras: máximo 7 puntos.";}
+  const graded=RUB.every(c=>GR.rub[c.k]!=null);
+  return {r,w,t:r+w,cap,graded};
+}
+function level(p){ return LEVELS.find(([m])=>p>=m)[1]; }
+function updateSum(){
+  const T=totals(); GR.total=T.graded?T.t:null; save();
+  const pct=Math.round(T.t/50*100);
+  document.getElementById("sum").innerHTML=`<div class="sumrow"><div><b>${T.r}/25</b><span>Reading</span></div><div><b>${T.graded?T.w+"/25":"—"}</b><span>Writing</span></div><div><b>${T.graded?T.t+"/50":"…"}</b><span>Total</span></div></div>`;
+  const big=document.getElementById("big");
+  big.innerHTML = T.graded ? `<div class="big">${T.t} / 50</div><div>${pct}%</div><span class="level">${level(pct)}</span>`
+   : `<div class="big">${T.r} / 25</div><div class="muted">Reading calificado. Falta que califiques el writing más abajo.</div>`;
+  const capEl=document.getElementById("cap"); if(capEl) capEl.textContent=T.cap;
+}
+function render(){
+  const qs=PAPER.sections.flatMap(s=>s.qs), mins=Math.round((SUB.end-SUB.start)/60000), wc=words(SUB.w);
+  const paras=(SUB.w||"").split(/\n\s*\n|\n/).filter(x=>x.trim()).length;
+  const qmarks=(SUB.w.match(/\?/g)||[]).length, excl=(SUB.w.match(/!/g)||[]).length, speech=(SUB.w.match(/['‘’"“”]/g)||[]).length;
+  const conn=["however","moreover","furthermore","in addition","also","because","therefore","firstly","secondly","finally","meanwhile","suddenly","although","as soon as","after","then"].filter(c=>new RegExp("\\b"+c+"\\b","i").test(SUB.w));
+  app.innerHTML=`<div class="sum" id="sum"></div>
+  <h1>${esc(SUB.name)}</h1><p class="muted">${esc(PAPER.title)} · ${new Date(SUB.end).toLocaleString("es-CO",{dateStyle:"medium",timeStyle:"short"})} · ${mins} min</p>
+  <div class="card" id="big"></div>
+  <div class="card"><p style="margin:0">La lectura ya está calificada automáticamente con el mark scheme. Revisa las preguntas marcadas <span class="tag rev">Revisar</span>: tienes la respuesta esperada y puedes cambiar el puntaje tocando el número. El writing lo calificas tú con la rúbrica de Cambridge.</p></div>
+  <details class="card"><summary>Ver el texto de la prueba</summary>${PAPER.texts.map(t=>`<h3 style="margin-top:10px">${esc(t.name)}</h3><div class="lines">${t.lines.map((l,i)=>`<div class="ln ${t.heads.includes(i+1)?"head":""}"><span class="no">${i+1}</span><span class="tx">${l==="******"?"* * *":esc(l)||"&nbsp;"}</span></div>`).join("")}</div>`).join("")}</details>
+  <h2 style="margin-top:20px">Reading</h2>
+  ${qs.map(q=>{const a=fmt(q,SUB.ans[q.id]), au=auto(q,SUB.ans[q.id]), rev=!(q.type==="mc"||q.type==="multi");
+   return `<div class="item"><div class="h"><span class="qn">${esc(q.id)}</span><span class="tag ${rev?"rev":"auto"}">${rev?"Revisar":"Automática"}</span></div>
+   ${q.pre?`<div class="key">${esc(q.pre)}</div>`:""}<div>${esc(q.p)}</div>
+   <div class="ans ${a?"":"empty"}">${a||"Sin respuesta"}</div>
+   <div class="key"><b>Respuesta esperada:</b> ${esc(q.k.note)}</div>
+   <div class="seg" data-q="${q.id}">${Array.from({length:q.m+1},(_,i)=>`<button class="${GR.marks[q.id]===i?"on":""} ${au===i?"sugg":""}" data-v="${i}" aria-label="${i} de ${q.m}">${i}</button>`).join("")}<span class="key" style="align-self:center">de ${q.m}</span></div></div>`}).join("")}
+  <h2 style="margin-top:22px">Writing</h2>
+  <div class="card"><p style="font-weight:700">${esc(PAPER.writing.task)}</p>
+   <div class="stats"><span>${wc} palabras</span><span>${paras} párrafo${paras===1?"":"s"}</span>${PAPER.writing.kind==="persuasive"?`<span>${qmarks} preguntas retóricas (?)</span><span>${excl} exclamaciones</span>`:`<span>${speech?"Usa diálogo":"Sin diálogo"}</span>`}<span>Conectores: ${conn.length?conn.map(esc).join(", "):"ninguno"}</span></div>
+   ${SUB.plan&&SUB.plan.trim()?`<details><summary>Ver su plan</summary><div class="wtext">${esc(SUB.plan)}</div></details>`:`<p class="key">No escribió plan.</p>`}
+   <div class="wtext" style="margin-top:8px">${SUB.w&&SUB.w.trim()?esc(SUB.w):"<i>No escribió nada.</i>"}</div>
+   <p id="cap" style="color:var(--pen);font-weight:700;margin-top:8px"></p>
+   ${RUB.map(c=>`<div class="crit"><b>${esc(c.n)}</b> <span class="key">(0–${c.max})</span>
+    <div class="seg" data-r="${c.k}">${Array.from({length:c.max+1},(_,i)=>`<button class="${GR.rub[c.k]===i?"on":""}" data-v="${i}">${i}</button>`).join("")}</div>
+    <div class="desc" id="d_${c.k}">${GR.rub[c.k]!=null?esc(c.d[GR.rub[c.k]]):"Toca un número. Empieza por el nivel más bajo y sube mientras el texto cumpla la descripción."}</div></div>`).join("")}
+  </div>
+  <div class="row" style="margin-top:16px;flex-direction:column"><button class="btn" id="copy">Copiar resumen</button><button class="btn ghost" id="other">Calificar otra prueba</button></div>
+  <p class="muted" id="msg" style="margin-top:8px"></p>`;
+  app.querySelectorAll(".seg[data-q] button").forEach(b=>b.onclick=()=>{ const s=b.parentElement; GR.marks[s.dataset.q]=+b.dataset.v; s.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b)); updateSum(); });
+  app.querySelectorAll(".seg[data-r] button").forEach(b=>b.onclick=()=>{ const s=b.parentElement, c=RUB.find(x=>x.k===s.dataset.r); GR.rub[c.k]=+b.dataset.v; s.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b)); document.getElementById("d_"+c.k).textContent=c.d[+b.dataset.v]; updateSum(); });
+  document.getElementById("copy").onclick=async()=>{ const T=totals(); const lost=qs.filter(q=>(GR.marks[q.id]||0)<q.m).map(q=>q.id).join(", ");
+    const t=`${SUB.name} – English ${PAPER.title}\nReading: ${T.r}/25\nWriting: ${T.graded?T.w+"/25":"sin calificar"}\nTotal: ${T.graded?T.t+"/50 ("+Math.round(T.t/50*100)+"%)":"—"}\nPreguntas para repasar: ${lost||"ninguna"}`;
+    try{ await navigator.clipboard.writeText(t); document.getElementById("msg").textContent="Resumen copiado."; }catch(e){ document.getElementById("msg").textContent=t; } };
+  document.getElementById("other").onclick=()=>{ history.replaceState(null,"",location.pathname); pasteScreen(""); };
+  updateSum(); window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",start);
+start();
+</script></body></html>
